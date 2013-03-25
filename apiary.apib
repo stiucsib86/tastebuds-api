@@ -11,6 +11,7 @@ Favourites
 The following is a section of resources related to the users' favourite restaurant
 --
 
+**Login Required.**
 List restaurants added into your favourites list.
 GET /api/favourites
 < 200
@@ -131,6 +132,7 @@ GET /api/favourites
     }
 ]
 
+**Login Required.**
 Add a restaurant as favourite
 POST /api/favourites
 > Content-Type: application/json
@@ -162,6 +164,7 @@ POST /api/favourites
     "is_deleted": "0"
 }
 
+**Login Required.**
 Remove a restaurant as favourite
 DELETE /api/favourites
 > Content-Type: application/json
@@ -178,7 +181,7 @@ The following is a section of resources related to the search tool.
 
 This resource allows you to search for restaurants
 POST /api/search/
-{ "keywords": "restaurant_id", "cvc": "123", "expiry": "0112" }
+{ "keywords": "starbucks", "page": "1" }
 < 200
 [
     {
