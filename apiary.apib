@@ -7,25 +7,32 @@ Welcome to the our sample API documentation. All comments can be written in (sup
 ---
 
 --
-Shopping Cart Resources
-The following is a section of resources related to the shopping cart
+Favourites
+The following is a section of resources related to the users' favourite restaurant
 --
 
-List products added into your shopping-cart. (comment block again in Markdown)
-GET /shopping-cart
+List restaurants added into your favourites list.
+GET /api/favourites
 < 200
 < Content-Type: application/json
-{ "items": [
-{ "url": "/shopping-cart/1", "product":"2ZY48XPZ", "quantity": 1, "name": "New socks", "price": 1.25 }
-] }
+[{"restaurant_id":"43","name":"Sample Restaurant","url":"http:\/\/restaurants.tastebuds-app.com\/restaurants\/view\/43","created_on_display_text":"12 January 2013","address":"","postal_code":"","website":"","contact_number":"","nearest_mrt":"","reservation_policy":"","created_by":"0","created_on":"2013-01-12 09:03:17","updated_on":"2013-01-12 09:05:45","description":"","picture":"43_e09f152aaf994168a411c9c0bd42cdc1.jpg","picture_full_url":"43_e09f152aaf994168a411c9c0bd42cdc1.jpg","_permissions":["VIEW"],"is_approved":"0","opening_hours":[{"opening_hour_id":"49","restaurant_id":"43","day_start":"","day_end":"","time_start":"00:00","time_end":"00:00","created_on":"2013-01-12 09:03:20","updated_on":"2013-01-12 09:03:20","time_start_hour":"00","time_start_minute":"00","time_end_hour":"00","time_end_minute":"00","display_text":"-: 00:00-00:00"}],"category":{},"cuisine":{},"location":[],"price_range":{},"statistics":{"restaurant_id":"43","likes":"1","recommendations":"1","recommendations_female":"0","recommendations_male":"0","recommendations_last30days":"0","recommendations_menu":"0","updated_on":"2013-03-25 11:00:51","restaurant_menus":[]},"promotion":[],"comments":[],"recommendations_summary_display_text":"","recommendations":[{"restaurants_recommendations_receivers":"36","restaurant_recommendation_id":"26","receiver_user_id":"0","fb_uid":"684816214","receiver_email":"","has_read":"0","updated_on":"2013-02-02 18:02:13","sender_user_id":"3","restaurant_id":"43","restaurant_menu_ids":[],"remarks":"The food here is really good! ","other_data":"","sender_users":[{"id":"3","user_id":"3","username":"suyuen","email":"suyuen@gmail.com","first_name":"Su Yuen","last_name":"Chin","company":"MokoMomo Interactive","phone":"+65-97319993","created_on":"1352276324","display_name":"Su Yuen, Chin"}]}],"user_session_rel_data":{"favourite":{"user_id":"1001","fb_id":"0","restaurant_id":"43","updated_on":"2013-01-12 09:05:45","name":"Sample Restaurant","picture":"43_e09f152aaf994168a411c9c0bd42cdc1.jpg","address":"","postal_code":"","website":"","contact_number":"","description":"","price_range":"0","category":"0","cuisine":"0","location":"0","nearest_mrt":"","reservation_policy":"","created_by":"0","created_on":"2013-01-12 09:03:17","is_approved":"0","is_saved":"0","is_deleted":"0"}}}]
 
-Save new products in your shopping cart
-POST /shopping-cart
+Add a restaurant as favourite
+POST /api/favourites
 > Content-Type: application/json
-{ "product":"1AB23ORM", "quantity": 2 }
+{ "restaurant_id":"4722" }
 < 201
 < Content-Type: application/json
-{ "status": "created", "url": "/shopping-cart/2" }
+{"user_id":"1001","fb_id":"0","restaurant_id":"4722","updated_on":"2013-02-27 14:44:47","name":"Starbucks Coffee (Fullerton)","picture":"http:\/\/tastebuds-media-s3-1.s3.amazonaws.com\/restaurants\/4722\/header-coffee_house.jpg","address":"1 Fullerton Road","postal_code":"S049213","website":"http:\/\/www.starbucks.com","contact_number":"63279245","description":"Starbucks Corporation is an American global coffee company and coffeehouse chain based in Seattle, Washington. Starbucks is the largest coffeehouse company in the world, with 20,366 stores in 61 countries, including 13,123 in the United States, 1,299 in Canada, 977 in Japan, 793 in the United Kingdom, 732 in China, 473 in South Korea, 363 in Mexico, 282 in Taiwan, 204 in the Philippines, and 164 in Thailand.","price_range":"1","category":"0","cuisine":"30","location":"71","nearest_mrt":"","reservation_policy":"Starbucks Coffee Singapore Private Ltd (\"Starbucks\" or \"we\" or \"us\")\nStarbucks Card Account Terms of Use and Agreement","created_by":"1001","created_on":"2013-01-19 06:25:13","is_approved":"1","is_saved":"1","is_deleted":"0"}
+
+Remove a restaurant as favourite
+DELETE /api/favourites
+> Content-Type: application/json
+{ "restaurant_id":"4722" }
+< 201
+< Content-Type: application/json
+true
+
 
 -- Payment Resources --
 
