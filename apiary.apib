@@ -499,16 +499,24 @@ GET /api/recommendations/
 **Login Required** 
 This resource allows you to post a recommendation
 POST /api/recommendations/
-{ "restaurant_id": "43" }
+{ "restaurant_id": "4722", "fb_uids": "703456445,703456445", "menu_ids": "66,67", "friends_group_ids": "8" }
 < 200
+{
+    "restaurant_recommendation_ids": [
+        "71"
+    ]
+}
+
 
 
 **Login Required** 
 This resource allows you to delete a recommendation
 DELETE /api/recommendations/
-{ "restaurant_id": "43" }
+{ "restaurant_id": "4722" }
 < 200
 true
+
+
 
 
 **Login Required** 
@@ -519,12 +527,13 @@ GET /api/recommendations/delete
 true
 
 
-**Login Required** 
-This resource allows you to post a recommended menu, with image
-POST /api/recommendations/menu_image
-{ "restaurant_id": "43" }
-< 200
 
+**Login Required** 
+This resource allows you to post a recommended menu image
+POST /api/recommendations/menu_image
+{ "restaurant_recommendation_id": "72", "restaurant_menu_id": "66", "picture": "file image" }
+< 200
+restaurant_recommendation_id
 
 
 
