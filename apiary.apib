@@ -209,25 +209,55 @@ The following is a section of resources related to CRUD of recommendation object
 
 
 **Login Required** 
-This resource allows you to get a recommendations for user
+This resource allows you to get ALL recommendations for user
 GET /api/recommendations/
 { "restaurant_id": "43" }
 < 200
 
 
 **Login Required** 
-This resource allows you to get a restaurant
-GET /api/recommendations/received
+This resource allows you to post a recommendation
+POST /api/recommendations/
 { "restaurant_id": "43" }
 < 200
 
 
-This resource allows you to get a restaurant
+**Login Required** 
+This resource allows you to delete a recommendation
 DELETE /api/recommendations/
 { "restaurant_id": "43" }
 < 200
 
 
+**Login Required** 
+This resource allows you to delete a recommendation
+GET /api/recommendations/delete
+{ "restaurant_id": "43" }
+< 200
+
+
+**Login Required** 
+This resource allows you to post a recommended menu, with image
+POST /api/recommendations/menu_image
+{ "restaurant_id": "43" }
+< 200
+
+
+**Login Required** 
+This resource allows you to get RECEIVED recommendations
+GET /api/recommendations/received/
+{ "restaurant_id": "43" }
+< 200
+
+
+**Login Required** 
+This resource allows you to get SENT recommendations
+GET /api/recommendations/sent/
+{ "restaurant_id": "43" }
+< 200
+
+
+**Login Required** 
 This resource allows you to get a restaurant
 DELETE /api/recommendations/
 { "restaurant_id": "43" }
